@@ -14,11 +14,6 @@ apt-get install -y \
   nginx \
   docker.io \
   curl \
-  ca-certificates \
-  gnupg \
-  lsb-release \
-  fontconfig \
-  openjdk-17-jre
 
 echo "Enabling services..."
 systemctl enable --now nginx
