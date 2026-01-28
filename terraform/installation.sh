@@ -43,7 +43,7 @@ chmod +x /usr/local/bin/kind
 sudo apt update
 sudo apt install -y openjdk-21-jre
 sudo  wget https://pkg.jenkins.io/debian-stable/binary/jenkins_2.452.4_all.deb
-sudo apt install ./jenkins_2.452.4_all.deb
+sudo apt install ./jenkins_2.452.4_all.deb -y
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 #################################
