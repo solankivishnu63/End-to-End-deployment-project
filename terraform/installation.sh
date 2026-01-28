@@ -40,24 +40,15 @@ chmod +x /usr/local/bin/kind
 #################################
 # Install Jenkins
 #################################
-echo "Installing Jenkins..."
-
-curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | \
-  gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
-
-echo "deb [signed-by=/usr/share/keyrings/jenkins.gpg] \
-  https://pkg.jenkins.io/debian-stable binary/" \
-  > /etc/apt/sources.list.d/jenkins.list
-
-apt-get update -y
-apt-get install -y jenkins
-systemctl enable --now jenkins
-
+sudo apt update
+sudo apt install -y openjdk-21-jre
+sudo  wget https://pkg.jenkins.io/debian-stable/binary/jenkins_2.452.4_all.deb
+sudo apt install ./jenkins_2.452.4_all.deb
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
 #################################
-# Final status
-#################################
-echo "Bootstrap completed successfully"
 
-echo "Jenkins initial admin password:"
-cat /var/lib/jenkins/secrets/initialAdminPassword || true
+# Clone DevOps Project Repository
+#################################
+echo "Cloning DevOps Project repository..."
 git clone https://github.com/solankivishnu63/DevOps-Project.git /devops-project
