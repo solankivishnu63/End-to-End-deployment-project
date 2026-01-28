@@ -48,7 +48,9 @@ sudo systemctl enable jenkins
 sudo systemctl start jenkins
 #################################
 
-# Clone DevOps Project Repository
+# Kubectl installation
 #################################
-echo "Cloning DevOps Project repository..."
-git clone https://github.com/solankivishnu63/DevOps-Project.git /devops-project
+curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+#################################
