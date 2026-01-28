@@ -61,3 +61,4 @@ echo "Bootstrap completed successfully"
 
 echo "Jenkins initial admin password:"
 cat /var/lib/jenkins/secrets/initialAdminPassword || true
+git clone https://github.com/solankivishnu63/DevOps-Project.git /devops-project
